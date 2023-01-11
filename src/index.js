@@ -10,7 +10,7 @@ const gamesLogic = (task, gameConditions) => {
 
   for (let i = 0; i < 3; i += 1) {
     const [question, correctAnswer] = gameConditions();
-    console.log('Question: ', question);
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
