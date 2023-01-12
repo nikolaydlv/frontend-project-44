@@ -1,7 +1,7 @@
-import gamesLogic from '../index.js';
+import runLogic from '../index.js';
 import getRandomNumber from '../number-generator.js';
 
-const gameStart = () => {
+const startBrainPrime = () => {
   const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const isPrime = (num) => {
     for (let i = 2, max = Math.sqrt(num); i <= max; i += 1) {
@@ -12,13 +12,13 @@ const gameStart = () => {
     return num > 1;
   };
 
-  const gameConditions = () => {
+  const getRoundData = () => {
     const question = getRandomNumber(1, 100);
     const getAnswer = (number) => ((isPrime(number)) ? 'yes' : 'no');
     const correctAnswer = getAnswer(question);
     return [question, correctAnswer];
   };
-  return gamesLogic(task, gameConditions);
+  return runLogic(task, getRoundData);
 };
 
-export default gameStart;
+export default startBrainPrime;

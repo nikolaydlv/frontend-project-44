@@ -1,7 +1,7 @@
-import gamesLogic from '../index.js';
+import runLogic from '../index.js';
 import getRandomNumber from '../number-generator.js';
 
-const gameStart = () => {
+const startBrainGcd = () => {
   const task = 'Find the greatest common divisor of given numbers.';
 
   const gcd = (num1, num2) => {
@@ -17,14 +17,14 @@ const gameStart = () => {
     return firstNumber.toString();
   };
 
-  const gameConditions = () => {
+  const getRoundData = () => {
     const num1 = getRandomNumber(1, 30);
     const num2 = getRandomNumber(1, 30);
     const question = `${num1} ${num2}`;
     const correctAnswer = gcd(num1, num2);
     return [question, correctAnswer];
   };
-  return gamesLogic(task, gameConditions);
+  return runLogic(task, getRoundData);
 };
 
-export default gameStart;
+export default startBrainGcd;

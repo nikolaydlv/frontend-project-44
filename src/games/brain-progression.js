@@ -1,7 +1,7 @@
-import gamesLogic from '../index.js';
+import runLogic from '../index.js';
 import getRandomNumber from '../number-generator.js';
 
-const gameStart = () => {
+const startBrainProgression = () => {
   const task = 'What number is missing in the progression?';
 
   const collPush = () => {
@@ -16,7 +16,7 @@ const gameStart = () => {
     return coll;
   };
 
-  const gameConditions = () => {
+  const getRoundData = () => {
     const numOfElement = getRandomNumber(0, 9);
     const array = collPush();
     const correctAnswer = array[numOfElement].toString();
@@ -26,7 +26,7 @@ const gameStart = () => {
     return [question, correctAnswer];
   };
 
-  return gamesLogic(task, gameConditions);
+  return runLogic(task, getRoundData);
 };
 
-export default gameStart;
+export default startBrainProgression;

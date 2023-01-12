@@ -1,37 +1,37 @@
-import gamesLogic from '../index.js';
+import runLogic from '../index.js';
 import getRandomNumber from '../number-generator.js';
 
-const gameStart = () => {
+const startBrainCalc = () => {
   const task = 'What is the result of the expression?';
 
   const operators = ['+', '-', '*'];
 
   const calculation = (firstNumber, secondNumber, operation) => {
     let result = 0;
-    if (operation === '+') {
-      result = firstNumber + secondNumber;
-    } else
-    if (operation === '-') {
-      result = firstNumber - secondNumber;
-    } else
-    if (operation === '*') {
-      result = firstNumber * secondNumber;
+    switch (operation) {
+      case '+':
+        result = firstNumber + secondNumber;
+        break;
+      case '-':
+        result = firstNumber - secondNumber;
+        break;
+      default:
+        result = firstNumber * secondNumber;
+        break;
     }
     return result.toString();
   };
 
-  const randomOperation = () => operators[getRandomNumber(0, 2)];
-
-  const gameConditions = () => {
+  const getRoundData = () => {
     const num1 = getRandomNumber(1, 10);
     const num2 = getRandomNumber(1, 10);
-    const operation = randomOperation();
+    const operation = operators[getRandomNumber(0, 2)];
     const question = `${num1} ${operation} ${num2}`;
     const correctAnswer = calculation(num1, num2, operation);
     return [question, correctAnswer];
   };
 
-  return gamesLogic(task, gameConditions);
+  return runLogic(task, getRoundData);
 };
 
-export default gameStart;
+export default startBrainCalc;

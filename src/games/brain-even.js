@@ -1,24 +1,21 @@
-import gamesLogic from '../index.js';
+import runLogic from '../index.js';
 import getRandomNumber from '../number-generator.js';
 
-const gameStart = () => {
+const startBrainEven = () => {
   const task = 'Answer "yes" if the number is even, otherwise answer "no".';
   const isEven = (num) => {
     if (num % 2 === 0) {
-      const result = 'yes';
-      return result;
+      return ('yes');
     }
-    const result = 'no';
-    return result;
+    return ('no');
   };
 
-  const gameConditions = () => {
-    const randomNumber = getRandomNumber(1, 30);
-    const question = randomNumber;
-    const correctAnswer = isEven(randomNumber);
+  const getRoundData = () => {
+    const question = getRandomNumber(1, 30);
+    const correctAnswer = isEven(question);
     return [question, correctAnswer];
   };
-  return gamesLogic(task, gameConditions);
+  return runLogic(task, getRoundData);
 };
 
-export default gameStart;
+export default startBrainEven;
