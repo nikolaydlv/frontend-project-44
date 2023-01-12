@@ -1,6 +1,5 @@
 import gamesLogic from '../index.js';
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+import getRandomNumber from '../number-generator.js';
 
 const gameStart = () => {
   const task = 'Answer "yes" if the number is even, otherwise answer "no".';

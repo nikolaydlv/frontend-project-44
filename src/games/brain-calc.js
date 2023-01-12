@@ -1,6 +1,5 @@
 import gamesLogic from '../index.js';
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+import getRandomNumber from '../number-generator.js';
 
 const gameStart = () => {
   const task = 'What is the result of the expression?';
