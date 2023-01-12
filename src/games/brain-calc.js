@@ -1,24 +1,25 @@
 import runLogic from '../index.js';
 import getRandomNumber from '../number-generator.js';
 
+const operators = ['+', '-', '*'];
+
+const calculation = (firstNumber, secondNumber, operation) => {
+  let result = 0;
+  switch (operation) {
+    case '+':
+      result = firstNumber + secondNumber;
+      break;
+    case '-':
+      result = firstNumber - secondNumber;
+      break;
+    default:
+      result = firstNumber * secondNumber;
+  }
+  return result.toString();
+};
+
 const startBrainCalc = () => {
   const task = 'What is the result of the expression?';
-  const operators = ['+', '-', '*'];
-
-  const calculation = (firstNumber, secondNumber, operation) => {
-    let result = 0;
-    switch (operation) {
-      case '+':
-        result = firstNumber + secondNumber;
-        break;
-      case '-':
-        result = firstNumber - secondNumber;
-        break;
-      default:
-        result = firstNumber * secondNumber;
-    }
-    return result.toString();
-  };
 
   const getRoundData = () => {
     const num1 = getRandomNumber(1, 10);
