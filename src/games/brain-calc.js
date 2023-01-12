@@ -3,7 +3,6 @@ import getRandomNumber from '../number-generator.js';
 
 const startBrainCalc = () => {
   const task = 'What is the result of the expression?';
-
   const operators = ['+', '-', '*'];
 
   const calculation = (firstNumber, secondNumber, operation) => {
@@ -17,7 +16,6 @@ const startBrainCalc = () => {
         break;
       default:
         result = firstNumber * secondNumber;
-        break;
     }
     return result.toString();
   };
