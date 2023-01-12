@@ -30,7 +30,6 @@ const startBrainCalc = () => {
     const correctAnswer = calculation(num1, num2, operation);
     return [question, correctAnswer];
   };
-
   return runLogic(task, getRoundData);
 };
 
