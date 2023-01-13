@@ -3,7 +3,7 @@ import getRandomNumber from '../number-generator.js';
 
 const task = 'What number is missing in the progression?';
 
-const collPush = () => {
+const getProgression = () => {
   const coll = [];
   const step = getRandomNumber(1, 5);
   const collLength = 10;
@@ -17,7 +17,7 @@ const collPush = () => {
 
 const getRoundData = () => {
   const numOfElement = getRandomNumber(0, 9);
-  const array = collPush();
+  const array = getProgression();
   const correctAnswer = array[numOfElement].toString();
   const newArray = array;
   newArray[numOfElement] = '..';
