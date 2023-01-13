@@ -13,7 +13,7 @@ const calculation = (firstNumber, secondNumber, operation) => {
     case '*':
       return (firstNumber * secondNumber).toString();
     default:
-      throw new Error('wrong operation');
+      throw new Error('wrong operator');
   }
 };
 
